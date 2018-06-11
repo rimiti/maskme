@@ -1,6 +1,6 @@
 {
   "name": "@rimiti/maskme",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Replace sensible string parts by asterisks (customizable).",
   "license": "MIT",
   "repository": "git+https://github.com/rimiti/maskme.git",
