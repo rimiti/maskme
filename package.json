@@ -1,0 +1,55 @@
+{
+  "name": "@rimiti/maskme",
+  "version": "0.0.0",
+  "description": "Replace sensible string parts by asterisks (customizable).",
+  "license": "MIT",
+  "repository": "git+https://github.com/rimiti/maskme.git",
+  "author": "Dimitri DO BAIRRO <dimitri.dobairro@dimsolution.com>",
+  "keywords": [
+    "maskme",
+    "string",
+    "replace",
+    "credit cart",
+    "cc",
+    "sensible data"
+  ],
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "clean": "rimraf lib && rimraf coverage && rimraf .nyc_output && rimraf lib_test",
+    "format": "prettier --write \"{src,test}/**/*.ts\"",
+    "lint": "tslint --force --format verbose \"src/**/*.ts\"",
+    "prepublishOnly": "npm run build",
+    "prebuild": "npm run clean && npm run format && npm run lint && echo Using TypeScript && tsc --version",
+    "build": "tsc --pretty && tsc -p tsconfig.test.json --pretty",
+    "test": "tsc -p tsconfig.test.json --pretty && nyc --exclude \"**/*-spec.js\" ava \"**/*-spec.js\" --verbose",
+    "coverage": "nyc report --reporter=lcov --reporter=text --reporter=html",
+    "watch": "npm run build -- --watch",
+    "watch:test:ts": "tsc -p tsconfig.test.json --pretty --watch",
+    "watch:test:ava": "ava \"**/*-spec.js\" --verbose --watch",
+    "watch:test": "run-p watch:test:ts watch:test:ava"
+  },
+  "devDependencies": {
+    "@types/node": "~8.0.0",
+    "ava": "^0.25.0",
+    "coveralls": "^3.0.1",
+    "nyc": "^11.8.0",
+    "prettier": "^1.5.2",
+    "rimraf": "^2.0.0",
+    "ts-node": "^6.0.3",
+    "tslint": "^5.10.0",
+    "tslint-config-prettier": "^1.13.0",
+    "typescript": "^2.3.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
+  }
+}
