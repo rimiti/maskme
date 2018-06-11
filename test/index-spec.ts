@@ -5,7 +5,7 @@ test("Shouldn't hide 2 first and 2 last chars \"4242424242424242\" => \"42******
   t.is(Maskme("4242424242424242"), "42************42");
 });
 
-test("Shouldn't hide 4 first and 4 last chars \"4242424242424242\" => \"4242xxxxxxxx4242\"", (t) => {
+test("Shouldn't hide 4 first and 4 last chars \"4242424242424242\" => \"42xxxxxxxxxxxx42\"", (t) => {
   t.is(Maskme("4242424242424242", {replaceBy: "x"}), "42xxxxxxxxxxxx42");
 });
 
