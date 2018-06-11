@@ -21,32 +21,7 @@ export default function (value: string, options?: Options) {
 
   let regex: RegExp;
   if (opt.type === Type.middle) {
-    if (opt.numberOfChars > value.length) {
-      let toReplace = "";
-      for (let i = 0; i < opt.numberOfChars; i += 1) {
-        toReplace += opt.replaceBy.toString()
-      }
-      return toReplace;
-    }
-
-
-    // Impair
-    if (((value.length - opt.numberOfChars) / 2) % 2) {
-
-      const middle = (value.length - opt.numberOfChars) / 2;
-      const left = value.substring(0, middle);
-      const right = value.substring(middle + opt.numberOfChars, value.length);
-
-      let toReplace = "";
-      for (let i = 0; i < opt.numberOfChars; i += 1) {
-        toReplace += opt.replaceBy.toString()
-      }
-      return left + toReplace + right;
-    }
-
-
-    return;
-
+    regex = new RegExp("(?<=\\w{"+ opt.numberOfChars + "})\\w(?=\\w{" + opt.numberOfChars + "})", "g");
   } else if (opt.type === Type.start) {
     regex = new RegExp("\\w(?=\\w{" + opt.numberOfChars + "})", "g");
   } else if (opt.type === Type.end) {
