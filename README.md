@@ -18,48 +18,47 @@ import Maskme from '@rimiti/maskme';
 const Maskme = require('@rimiti/maskme').default;
 ```
 
-
 ## How to use it?
 
 Keep 2 first and 2 last chars (default configuration: offsetLeft: 2, offsetRight: 2):
 ```
-Maskme("4242424242424242"), "42************42");
+Maskme("4242424242424242");
 42************42
 ```
 
 Keep 4 first and 4 last chars and customize replacer:
 ```
-Maskme("4242424242424242", {replaceBy: "x"}), "42xxxxxxxxxxxx42");
+Maskme("4242424242424242", {replaceBy: "x"});
 42xxxxxxxxxxxx42
 ```
 
 Kepp 2 last chars:
 ```
-Maskme("4242424242424242", {offsetLeft: 0,}), "**************42");
+Maskme("4242424242424242", {offsetLeft: 0,});
 **************42
 ```
 
 Keep 2 first chars:
 ```
-Maskme("4242424242424242", {offsetRight: 0}), "42**************");
+Maskme("4242424242424242", {offsetRight: 0});
 42**************
 ```
 
 Hide all chars:
 ```
-Maskme("4242424242424242", {offsetRight: 0, offsetLeft: 0}), "****************");
+Maskme("4242424242424242", {offsetRight: 0, offsetLeft: 0});
 ****************
 ```
 
 Keep 6 first and 5 last chars:
 ```
-Maskme("4242424242424242", {offsetLeft: 6, offsetRight: 5}), "424242*****24242");
+Maskme("4242424242424242", {offsetLeft: 6, offsetRight: 5});
 424242*****24242
 ```
 
 Hide nothing:
 ```
-Maskme("4242424242424242", {offsetLeft: 30, offsetRight: 40}), "4242424242424242");
+Maskme("4242424242424242", {offsetLeft: 30, offsetRight: 40});
 4242424242424242
 ```
 
