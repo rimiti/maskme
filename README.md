@@ -6,7 +6,7 @@
 
 ## Description 
 
-This module provide a powerful function to hide you sensible data with "lookbehind" regex. 
+This module provide a powerful function to hide your sensible data with "lookbehind" regex. 
 
 ## Using this module in other modules
 
