@@ -1,7 +1,7 @@
 const defaultOptions = {
   offsetLeft: 2,
   offsetRight: 2,
-  replaceBy: "*"
+  replaceBy: "*",
 };
 
 export interface IOptions {
@@ -10,7 +10,7 @@ export interface IOptions {
   offsetRight?: number;
 }
 
-export default function(value: string, options?: IOptions) {
+export default function (value: string, options?: IOptions) {
   const opt = { ...defaultOptions, ...options };
   const regex = new RegExp(
     "(?<=\\w{" + opt.offsetLeft + "})\\w(?=\\w{" + opt.offsetRight + "})",
